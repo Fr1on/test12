@@ -1,0 +1,31 @@
+.column{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+}
+.qwe{
+ padding: 5px;
+}
+.input{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+
+}
+.column p{
+    padding: 0px;
+    margin: 0px;
+}
+.button{
+    color: black;
+    text-decoration: none;
+    user-select: none;
+    background: white;
+    padding: .7em 1.5em;
+    outline: none;
+    border-radius: 10px;
+
+}
+.button:hover { background: darkgray; }
+.button:active { background: grey; }
