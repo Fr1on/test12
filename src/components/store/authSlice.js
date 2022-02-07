@@ -33,22 +33,9 @@ export const loginSlice = createSlice({
     initialState: {initialLogin},
     reducers: {},
     extraReducers: {
-        [postUser.fulfilled]: (state) => {
-            state.isSuccess = true
-            console.log('dasd')
-
-            return state;
-        },
-        [postUser.pending]: (state) => {
-            state.isSuccess = false
-            return state;
-        },
-        [postUser.rejected]: (state) => {
-            state.isSuccess = false
-
-            console.log('dя еблдан')
-            return state;
-        },
+        [postUser.fulfilled]: '',
+        [postUser.pending]:'',
+        [postUser.rejected]: ''
 
 
     }

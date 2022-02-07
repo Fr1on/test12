@@ -1,22 +1,20 @@
 import React, {useRef} from 'react';
 import classes from './Login.module.css'
 
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {postUser, setEmail, setPassword} from "../store/authSlice";
-import {Navigate, Route} from "react-router-dom";
 
 
-
-function Login({submitHandlerr, succes, navigate}) {
+function Login({submitHandlerr, succes, navigate}){
 
     const dispatch = useDispatch();
+    const isLoggenin = (localStorage.getItem('token') === 'undefined' ||  localStorage.getItem('token') === null)
 
     const submitHandler = (event) => {
         event.preventDefault();
         const email = $email.current.value;
         const password = $password.current.value;
         dispatch(postUser({email, password}))
-        return navigate('/')
     }
 
     const $email = useRef(null)
@@ -24,7 +22,7 @@ function Login({submitHandlerr, succes, navigate}) {
     return (
 
         <div className={classes.column}>
-            {localStorage.getItem('token') === 'undefined' || localStorage.getItem('token') === null ? (
+            {isLoggenin ? (
                 <section>
                     <form action="" onSubmit={submitHandler}>
                         <h3>Авторизация</h3>
